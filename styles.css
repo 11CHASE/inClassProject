@@ -43,6 +43,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all .5s;
 }
 
 .logo--lines {
@@ -55,17 +56,32 @@ body {
 }
 
 .logo--lines:nth-child(1) {
-    transform: translateY(5px) rotate(90deg);
+    transform: translateY(5px) rotate(45deg);
 }
 
 .logo--lines:nth-child(2) {
-    transform: rotate(45deg);
+    transform: rotate(90deg);
 }
 
 .logo--lines:nth-child(3) {
-    transform: translateY(-5px) rotate(315deg);
+    transform: translateY(-5px) rotate(-45deg);
 }
 
 .logo.active .logo--lines {
-    transform: rotate(360deg);
+    width: 0;
+}
+
+.logo.active .logo--lines:nth-child(1) {
+    transform: translateY(5px);
+}
+
+.logo.active .logo--lines:nth-child(3) {
+    transform: translateY(-5px);
+}
+
+.logo.active {
+    height: 25px;
+    width: 25px;
+    margin: 47.5px 0 0 47.5px;
+    transition: all .5s;
 }
